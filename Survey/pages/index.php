@@ -30,7 +30,7 @@ session_start();
 	<head>
 		<meta charset="utf-8">
 		<title>My Ring</title>
-		<link href="survey/css/custom.css" rel="stylesheet">
+		<link href="Survey/css/custom.css" rel="stylesheet">
 		<link href="css/custom.css" rel="stylesheet">
 	</head>
 	<body>
