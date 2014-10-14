@@ -3,7 +3,7 @@
 session_start();
 	if(isset($_SESSION['views'])){
 		 $_SESSION['views'] = $_SESSION['views'] + 1;
-		 header("Location: results.php");
+		 header("Location: greetings.php");
 	} else{
 		$_SESSION['views'] = 1;
 	}
@@ -15,11 +15,8 @@ session_start();
 				  $fullname=$_POST['name'];
 				  header('Location: questions.php');
 			 }
+			 $_SESSION['name'] = $fullname;
 
-			 // - Set Cookie for 1hr -
-				  setcookie("user", $fullname, time()+3600);	
-					
-			 // - End -
 			}
 		else{
 			$error = "What is your name?";
@@ -30,11 +27,11 @@ session_start();
 	<head>
 		<meta charset="utf-8">
 		<title>My Ring</title>
-		<link href="/Survey/css/custom.css" rel="stylesheet">
-		<link href="/css/custom.css" rel="stylesheet">
+		<link href="Survey/css/custom.css" rel="stylesheet">
+		<link href="css/custom.css" rel="stylesheet">
 	</head>
 	<body>
-	<nav>
+		<nav>
  		<ul>
  			<li>
  				<a href="/index.php">Me</a>
@@ -49,7 +46,7 @@ session_start();
  	</nav>
 		<div id="wrapper">
 			<form action="<?php echo $_SERVER["REQUEST_URI"];?>" method="POST">
-				<?php echo $error; ?>
+				Welcome, <?php echo $error; ?>!
 					<br/>
 				<input type="text" id="name" name="name" placeholder="Full Name" />
 					<br/>

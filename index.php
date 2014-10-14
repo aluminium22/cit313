@@ -5,13 +5,16 @@
   <link href="css/custom.css" rel="stylesheet">
  </head>
  <body>
- 	<nav>
+ 		<nav>
  		<ul>
  			<li>
  				<a href="/index.php">Me</a>
  			</li>
  			<li>
  				<a href="/assignment.php">Assignments</a>
+ 			 </li>
+ 			 <li>
+ 				<a href="/Survey/index.php">Ring Survey</a>
  			 </li>
  		</ul>
  	</nav>

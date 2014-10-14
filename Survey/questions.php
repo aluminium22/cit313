@@ -1,11 +1,7 @@
 <?php
 // - Page View Counter-
 session_start();
-	if(isset($_SESSION['views'])){
-		 $_SESSION['views'] = $_SESSION['views'] + 1;
-	} else{
-		$_SESSION['views'] = 1;
-	}
+	
 // - End -
 
 if(isset($_POST['submit'])){			
@@ -16,22 +12,25 @@ if(isset($_POST['submit'])){
   $q4 = $_POST['q4'];
   $q5 = $_POST['q5'];
   header('Location: results.php');
-}
-// - Set Cookie for 1hr -
-	  setcookie("Question1", $q1, time()+3600);
-	  setcookie("Question2", $q2, time()+3600);
-	  setcookie("Question3", $q3, time()+3600);
-	  setcookie("Question4", $q4, time()+3600);
-	  setcookie("Question5", $q5, time()+3600);	
-// - End -
+}	
+if(isset($_SESSION['views'])){
+		 $_SESSION['views'] = $_SESSION['views'] + 1;
+		 $_SESSION["q1"] = $q1;
+		 $_SESSION["q2"] = $q2;
+		 $_SESSION["q3"] = $q3;
+		 $_SESSION["q4"] = $q4;
+		 $_SESSION["q5"] = $q5;
+	} else{
+		$_SESSION['views'] = 1;
+	}  
 ?>
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<title>Your Ring Setup</title>
-		<link href="/Survey/css/custom.css" rel="stylesheet">
-		<link href="/css/custom.css" rel="stylesheet">
+		<link href="Survey/css/custom.css" rel="stylesheet">
+		<link href="css/custom.css" rel="stylesheet">
 	</head>
 	<body>
 	<nav>
@@ -49,7 +48,7 @@ if(isset($_POST['submit'])){
  	</nav>
 		<div id="wrapper">
 			<form action="<?php echo $_SERVER['REQUEST_URI'];?>" method="POST">
-				<?php echo $greetings; ?>
+				<?php echo $_SESSION["name"]; ?>
 				<div id="questions"></div>
 					<label class="questions">Are you looking for a male / female ring?</label>
 					<br/>
@@ -78,6 +77,7 @@ if(isset($_POST['submit'])){
 		<div id="footer">
 			<p>Pageviews: <?php echo $_SESSION['views']; ?></p>
 			<a href="purge.php">Delete Sessions and Cookies</a>
+			<a href="results.php">Results</a>
 		</div>
 	</body>
 </html>

@@ -1,12 +1,5 @@
 <?php
-// - Page View Counter-
 session_start();
-	if(isset($_SESSION['views'])){
-		 $_SESSION['views'] = $_SESSION['views'] + 1;
-	} else{
-		$_SESSION['views'] = 1;
-	}
-// - End -
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -16,31 +9,31 @@ session_start();
 	</head>
 	<body>
 		<div id="wrapper">
-			<h1><?php echo $_COOKIE["user"] ?>, These are your results.</h1>
+			<h1><?php echo $_SESSION['name']; ?>, These are your results.</h1>
 
 					<label class="questions">Are you looking for a male / female ring?</label>
 						<br/>
-						<?php echo $_COOKIE['Question1']; ?>
+						<?php echo $_SESSION['q1']; ?>
 						<br/>
 
 					<label class="questions">What type of band?</label>
 						<br/>
-						<?php echo $_COOKIE['Question2']; ?>
+						<?php echo $_SESSION['q2']; ?>
 						<br/>
 
 					<label class="questions">What size carat?</label>
 						<br/>
-						<?php echo $_COOKIE['Question3']; ?>
+						<?php echo $_SESSION['q3']; ?>
 						<br/>
 
 					<label class="questions">What type of gem?</label>
 						<br/>
-						<?php echo $_COOKIE['Question4']; ?>
+						<?php echo $_SESSION['q4']; ?>
 						<br/>
 
 					<label class="questions">What ring size?</label>
 						<br/>
-						<?php echo $_COOKIE['Question5']; ?>
+						<?php echo $_SESSION['q5']; ?>
 						<br/>
 
 						<div id="home">
