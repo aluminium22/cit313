@@ -8,21 +8,12 @@ session_start();
 		<title>My Ring</title>
 		<link href="Survey/css/custom.css" rel="stylesheet">
 		<link href="css/custom.css" rel="stylesheet">
+		<link href="custom.css" rel="stylesheet">
 	</head>
 	<body>
-		<nav>
- 		<ul>
- 			<li>
- 				<a href="/index.php">Me</a>
- 			</li>
- 			<li>
- 				<a href="/assignment.php">Assignments</a>
- 			 </li>
- 			 <li>
- 				<a href="/Survey/pages/index.php">Ring Survey</a>
- 			 </li>
- 		</ul>
- 	</nav>
+		<div id="navi">
+			<?php include 'nav.php'; ?>
+		</div>
 		<div id="wrapper">
 			
 				<h2>Welcome Back <?php echo $_SESSION['name'];?></h2>

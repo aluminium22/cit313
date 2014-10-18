@@ -1,5 +1,5 @@
 #wrapper{
-	padding-top:15px;
+	padding-top:50px;
 	padding-bottom: 15px;
 	width:600px;
 	background:#f5f5f5;
@@ -74,7 +74,7 @@ img{
     -moz-transition-duration: 250ms;
 }
 img:hover {
-    opacity: .7;
+    opacity: .99;
 
     -webkit-transform: scale(1.05,1.07);
     

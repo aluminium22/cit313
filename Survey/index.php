@@ -1,6 +1,7 @@
 <?php
 // - Page View Counter-
 session_start();
+
 	if(isset($_SESSION['views'])){
 		 $_SESSION['views'] = $_SESSION['views'] + 1;
 		 header("Location: greetings.php");
@@ -29,20 +30,12 @@ session_start();
 		<title>My Ring</title>
 		<link href="Survey/css/custom.css" rel="stylesheet">
 		<link href="css/custom.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../custom.css"/>
 	</head>
 	<body>
-		<nav>
- 		<ul>
- 			<li>
- 				<a href="/index.php">Me</a>
- 			</li>
- 			<li>
- 				<a href="/assignment.php">Assignments</a>
- 			 </li>
- 			 <li>
- 				<a href="/Survey/pages/index.php">Ring Survey</a>
- 			 </li>
- 		</ul>
+		<div id="navi">
+			<?php include '../nav.php'; ?>
+		</div>
  	</nav>
 		<div id="wrapper">
 			<form action="<?php echo $_SERVER["REQUEST_URI"];?>" method="POST">
