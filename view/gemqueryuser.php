@@ -9,11 +9,11 @@
 		 
 function getGem(){
 					$db = connectToDatabase();
-					$query = $db->prepare("SELECT * FROM  Stones");
+					$query = $db->prepare("SELECT * FROM  stones");
 					$query->execute();
 					$result = $query->fetchAll();
 				   foreach($result as $row){
-				   	echo "<h3>".$row['name']."</h3>";
+				   	echo "<div id='list'><h3>".$row['name']."</h3></div>";
 				   }
 				
 }
@@ -21,7 +21,7 @@ function getGem(){
 function search($input){
 					$db= connectToDatabase();
 					$gem = $input;
-					foreach($db->query("SELECT * FROM Stones WHERE name ='".$gem."'") as $row){
+					foreach($db->query("SELECT * FROM stones WHERE name ='".$gem."'") as $row){
 						$row;
 						return $row;
 					}
@@ -35,6 +35,13 @@ if(isset($_POST['submit'])){
 
 }
 
+if(isset($_POST['submit1'])){
+	//time to create a variable from the form's name.
+	$gName = $_POST['gName'];
+	$gSize = $_POST['gSize'];
+	$permission = "admin";
+	createGem($gName, $gSize);
+}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -48,12 +55,13 @@ if(isset($_POST['submit'])){
 			<div id="wrapper">
 					<label>Please Type Search Query (from list above)</label>
 					<form action ="gemquery.php" method="POST">
-						<input type="text" name="input" />
+						<input type="text" name="input" /><br />
 						<input type="submit" value="submit" name="submit"/>
 					</form>
 					<?php echo $typeGem;?>
 					<br/>
 					<?php echo $imgGem;?>
+					<br />
 			</div>	
 		</body>
 </html>

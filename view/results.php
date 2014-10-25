@@ -7,7 +7,7 @@ session_start();
 		<meta charset="utf-8">
 		<title>Results</title>
 		<link href="Survey/css/custom.css" rel="stylesheet">
-		<link href="custom.css" rel="stylesheet">
+		<link href="view/custom.css" rel="stylesheet">
 	</head>
 	<body>
 	<div id="navi">
@@ -42,13 +42,13 @@ session_start();
 						<br/>
 
 						<div id="home">
-							<a href="indexsurvey.php">Go Back</a>
+							<a href="view/indexsurvey.php">Go Back</a>
 						</div>
 
 		</div>
 		<div id="footer">
 			<p>Pageviews: <?php echo $_SESSION['views']; ?></p>
-			<a href="purge.php">Delete Sessions and Cookies</a>
+			<a href="view/purge.php">Delete Sessions and Cookies</a>
 		</div>
 	</body>
 </html>

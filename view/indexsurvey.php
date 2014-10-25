@@ -4,7 +4,7 @@ session_start();
 
 	if(isset($_SESSION['views'])){
 		 $_SESSION['views'] = $_SESSION['views'] + 1;
-		 header("Location: greetings.php");
+		 header("Location: view/greetings.php");
 	} else{
 		$_SESSION['views'] = 1;
 	}
@@ -14,7 +14,7 @@ session_start();
 		if(isset($_POST['name'])){
 			if(isset($_POST['submit'])){
 				  $fullname=$_POST['name'];
-				  header('Location: questions.php');
+				  header('Location: view/questions.php');
 			 }
 			 $_SESSION['name'] = $fullname;
 
@@ -29,7 +29,7 @@ session_start();
 		<meta charset="utf-8">
 		<title>My Ring</title>
 		<link href="Survey/css/custom.css" rel="stylesheet">
-		<link href="custom.css" rel="stylesheet">
+		<link href="view/custom.css" rel="stylesheet">
 	</head>
 	<body>
 		<div id="navi">
@@ -46,7 +46,7 @@ session_start();
 		</div>
 		<div id="footer">
 			<p>Pageviews: <?php echo $_SESSION['views']; ?></p>
-			<a href="purge.php">Delete Sessions and Cookies</a>
+			<a href="view/purge.php">Delete Sessions and Cookies</a>
 		</div>
 	</body>
 </html>

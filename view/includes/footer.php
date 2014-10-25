@@ -6,3 +6,4 @@
 				<li><a href="assignment.php">Assignments</a></li>
 				<li><a href="gemquery.php">Gem Query</a></li>
 </ul>
+&copy; 2014

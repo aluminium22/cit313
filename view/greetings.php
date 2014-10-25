@@ -7,7 +7,8 @@ session_start();
 		<meta charset="utf-8">
 		<title>My Ring</title>
 		<link href="Survey/css/custom.css" rel="stylesheet">
-		<link href="custom.css" rel="stylesheet">
+		<link href="css/custom.css" rel="stylesheet">
+		<link href="view/custom.css" rel="stylesheet">
 	</head>
 	<body>
 		<div id="navi">
@@ -18,8 +19,8 @@ session_start();
 				<h2>Welcome Back <?php echo $_SESSION['name'];?></h2>
 					<br/>
 					<p>What do you want to do?</p>	
-					<a href="purge.php">Start a new Survey</a><br />
-					<a href="results.php">See Results</a>
+					<a href="view/purge.php">Start a new Survey</a><br />
+					<a href="view/results.php">See Results</a>
 		</div>
 		<div id="footer">
 			<p>Pageviews: <?php echo $_SESSION['views']; ?></p>
