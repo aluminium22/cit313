@@ -36,10 +36,7 @@
 		break;
 		case 'myring':
 			
-			$info = getPage($action);
-			$col1 = $info['col1'];
-			$col2 = $info['col2'];
-			$col3 = $info['col3'];
+			header("location: indexsurvey.php");
 
 		break;
 		case 'contact':

@@ -3,6 +3,13 @@
 session_start();
 	
 // - End -
+try{
+		include 'connect.php';
+		include 'pages.php';
+	}
+	catch(EXCEPTION $ex){
+		echo 'error files not found';
+	}
 
 if(isset($_POST['submit'])){			
   $greetings = "Welcome " . $_COOKIE["user"] . "!<br>";
@@ -55,8 +62,23 @@ if(isset($_SESSION['views'])){
 					<input type="text" id="q3" name="q3" placeholder="Carat?" /> <br/>
 					<label class="questions">What type of gem?</label>
 					<br/>
+<?php function getGem(){
+					$db = connectToDatabase();
+					$query = $db->prepare("SELECT * FROM  stones");
+					$query->execute();
+					$result = $query->fetchAll();
+				   foreach($result as $row){
+				   	$gemy=$row["name"];
+                echo "<option>
+                    $gemy
+                </option>";
+				   }
+				
+} ?>
+					<select name="q4" id="q4">
 
-					<input type="text" id="q4" name="q4" placeholder="Ruby, Saphire, Tiger etc...?" /> <br/>
+						<?php getGem(); ?>
+						</select> <br/>
 					<label class="questions">What ring size?</label>
 					<br/>
 
